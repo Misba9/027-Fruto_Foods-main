@@ -166,10 +166,6 @@ function AboutUsPage() {
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <footer className="text-center py-6 text-sm text-gray-500">
-        © {new Date().getFullYear()} Fruto Foods. All Rights Reserved.
-      </footer>
     </div>
   );
 }

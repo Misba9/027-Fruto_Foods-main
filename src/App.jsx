@@ -19,9 +19,8 @@ import MainContentContainer from './MainContentContainer.jsx';
 function App() {
   return (
     <HelmetProvider>
-    <div className="min-h-screen bg-black flex items-center justify-center">
+    <div className="min-h-screen  flex items-center justify-center">
       <ScrollProgress />
-      {/* <div className="w-[98%] h-[99vh] bg-white rounded-3xl shadow-lg overflow-auto no-scrollbar my-3"> */}
       <MainContentContainer>
         <div className='min-h-full'>
           <Header />

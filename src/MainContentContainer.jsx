@@ -17,7 +17,7 @@ export default function MainContentContainer({ children }) {
   return (
     <div
       ref={containerRef}
-      className="w-[98%] h-[99vh] bg-white rounded-3xl shadow-lg overflow-auto no-scrollbar my-3"
+      className="w-[100%] h-[100vh]  shadow-lg overflow-auto no-scrollbar "
     >
       {children}
     </div>

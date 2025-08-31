@@ -98,7 +98,7 @@ const Footer = () => {
       <div className="flex flex-row space-x-3 sm:space-x-5 mt-2">
         <SocialIcon imgSrc={facebook} alt="Facebook" link="https://facebook.com" w={5} h={5} />
         <SocialIcon imgSrc={linkedin} alt="LinkedIn" link="https://linkedin.com" w={5} h={5} />
-        <SocialIcon imgSrc={whatsapp} alt="WhatsApp" link="https://whatsapp.com" w={6} h={6} />
+        {/* <SocialIcon imgSrc={whatsapp} className="w-33" alt="WhatsApp" link="https://whatsapp.com" w={24} h={18} /> */}
         <SocialIcon imgSrc={instagram} alt="Instagram" link="https://instagram.com" w={5} h={5} />
       </div>
     </motion.div>
@@ -128,7 +128,7 @@ const Footer = () => {
           transition={{ duration: 0.2 }}
         >
           <img src={call} alt="Phone" className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7" />
-          <span>+91 98765 43210</span>
+          <span>+91 75696 30192</span>
         </motion.li>
         <motion.li
           className="flex items-center justify-center lg:justify-start"
@@ -136,7 +136,7 @@ const Footer = () => {
           transition={{ duration: 0.2 }}
         >
           <img src={mail} alt="Mail" className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7" />
-          <span>info@frutofoods.com</span>
+          <span>Frutofoods@gmail.com </span>
         </motion.li>
         <motion.li
           className="flex items-center justify-center lg:justify-start"
@@ -145,7 +145,7 @@ const Footer = () => {
         >
           <img src={location} alt="Location" className="mr-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
           <span className="max-w-xs sm:max-w-md break-words">
-            #12-13-418/4, Street.no.1, Tarnaka, Hyderabad 5000017, Telangana, India
+            12-13-418/4, street.no.1, Tarnaka, Hyderabad 5000017, Telangana state, India
           </span>
         </motion.li>
       </ul>
