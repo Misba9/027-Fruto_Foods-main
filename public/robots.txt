@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://frutofoods.in/sitemap.xml
+# Block build/system folders (not useful for SEO)
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://www.frutofoods.in/sitemap.xml
