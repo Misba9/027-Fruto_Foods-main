@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import star from '../assets/images/star.png';
 import tree from '../assets/images/tree.png';
 import moringa from '../assets/images/moringa.png';
@@ -27,38 +28,85 @@ const Products = () => {
   ];
 
   return (
-    <div id="products" className=" md:py-16 py-8  bg-[#C4EBB3BF]">
+    <motion.div 
+      id="products" 
+      className="md:py-16 py-8 bg-[#C4EBB3BF]"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
 
       <div className="container mx-auto z-10">
-        <div className="flex  items-center md:ml-8 ml-4 text-6xl font-medium md:mb-6">
-          <img src={star} alt="Star Icon" className=" inline-block " />
+        <motion.div 
+          className="flex items-center md:ml-8 ml-4 text-6xl font-medium md:mb-6"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.img 
+            src={star} 
+            alt="Decorative star icon" 
+            className="inline-block"
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 0.5 }}
+          />
 
           <h2 className="md:text-6xl text-3xl ml-1 leading-none">
             <span className="md:border-b-4 border-b-3 border-[#7B2D26]">
               Our Prod</span>
             ucts
           </h2>
-        </div>
-        <p className="md:ml-14 ml-8 md:mt-8 mt-4 mx-auto md:text-2xl text-lg  text-gray-800 md:mb-12 ">"We bring you a wide range of natural powders made from fresh harvests — including fruit, vegetable, and herbal powders, each processed with utmost care to promise authentic taste, rich nutrition, and uncompromised quality."</p>
+        </motion.div>
+        <motion.p 
+          className="md:ml-14 ml-8 md:mt-8 mt-4 mx-auto md:text-2xl text-lg text-gray-800 md:mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          "We bring you a wide range of natural powders made from fresh harvests — including fruit, vegetable, and herbal powders, each processed with utmost care to promise authentic taste, rich nutrition, and uncompromised quality."
+        </motion.p>
         <div className='md:mx-10 mx-8   relative overflow-hidden'>
           <div className='md:mt-20 mt-8'>
-            <img src={tree} alt="Tree Background" className="absolute inset-0 w-full h-full object-cover z-0" />
+            <img 
+              src={tree} 
+              alt="Natural tree background decoration" 
+              className="absolute inset-0 w-full h-full object-cover z-0"
+              loading="lazy"
+            />
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 md:gap-10 gap-5 relative z-10">
               {productList.map((product, index) => (
-                <Link to={product.path} key={index}>
-                  <div className=" rounded-lg shadow-lg  overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300 border">
-                    <img src={product.image} alt={product.name} className="md:w-full  md:h-56 h-full object-cover" />
-                    <div className="md:p-4 p-1  text-center  font-semibold md:text-lg text-sm group-hover:bg-green-800 transition-colors">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Link to={product.path}>
+                    <div className="rounded-lg shadow-lg overflow-hidden group transition-all duration-300 border hover:shadow-2xl hover:border-green-500">
+                      <motion.img 
+                        src={product.image} 
+                        alt={`${product.name} - Premium natural powder from Fruto Foods`} 
+                        className="md:w-full md:h-56 h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      <div className="md:p-4 p-1 text-center font-semibold md:text-lg text-sm group-hover:bg-green-800 group-hover:text-white transition-all duration-300">
                       <h3>{product.name}</h3>
                     </div>
                   </div>
-                </Link>
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

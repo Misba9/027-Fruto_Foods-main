@@ -1,26 +1,63 @@
 import React from 'react'
+import { motion } from 'framer-motion';
+import SEOHead from '../components/SEOHead';
 
 function Privacy_Policy_Page() {
   return (
      <div className="max-w-5xl mx-auto px-6 py-10 text-gray-800 leading-relaxed">
-      <h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
-      <p className="text-sm text-gray-500 mb-6">Last updated: August 22, 2025</p>
+       <SEOHead 
+         title="Privacy Policy - Fruto Foods | Data Protection"
+         description="Read Fruto Foods privacy policy. Learn how we collect, use, and protect your personal information when you use our services."
+         keywords="privacy policy, data protection, fruto foods privacy, personal information"
+       />
+       
+      <motion.h1 
+        className="text-4xl font-bold mb-6 text-center"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        Privacy Policy
+      </motion.h1>
+      <motion.p 
+        className="text-sm text-gray-500 mb-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        Last updated: August 22, 2025
+      </motion.p>
 
-      <p>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         This Privacy Policy describes Our policies and procedures on the
         collection, use and disclosure of Your information when You use the
         Service and tells You about Your privacy rights and how the law protects
         You.
-      </p>
-      <p className="mt-4">
+      </motion.p>
+      <motion.p 
+        className="mt-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
         We use Your Personal data to provide and improve the Service. By using
         the Service, You agree to the collection and use of information in
         accordance with this Privacy Policy.
-      </p>
+      </motion.p>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-4">
+      <motion.h2 
+        className="text-2xl font-semibold mt-8 mb-4"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Interpretation and Definitions
-      </h2>
+      </motion.h2>
       <h3 className="text-xl font-semibold mt-6 mb-2">Interpretation</h3>
       <p>
         The words of which the initial letter is capitalized have meanings
@@ -30,7 +67,13 @@ function Privacy_Policy_Page() {
       </p>
 
       <h3 className="text-xl font-semibold mt-6 mb-2">Definitions</h3>
-      <ul className="list-disc list-inside space-y-2">
+      <motion.ul 
+        className="list-disc list-inside space-y-2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <li>
           <strong>Account:</strong> a unique account created for You to access
           our Service or parts of our Service.
@@ -83,11 +126,17 @@ function Privacy_Policy_Page() {
         <li>
           <strong>You:</strong> the individual accessing or using the Service.
         </li>
-      </ul>
+      </motion.ul>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-4">
+      <motion.h2 
+        className="text-2xl font-semibold mt-10 mb-4"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Collecting and Using Your Personal Data
-      </h2>
+      </motion.h2>
       <h3 className="text-xl font-semibold mt-6 mb-2">
         Types of Data Collected
       </h3>
@@ -114,9 +163,15 @@ function Privacy_Policy_Page() {
         visited, time and date of visit, and other diagnostic data.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-10 mb-4">
+      <motion.h2 
+        className="text-2xl font-semibold mt-10 mb-4"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         Contact Us
-      </h2>
+      </motion.h2>
       <p>If you have any questions about this Privacy Policy, You can contact us:</p>
       <ul className="list-disc list-inside space-y-1 mt-2">
         <li>By email: frutofoods@gmail.com</li>

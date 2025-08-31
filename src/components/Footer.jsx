@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import SocialIcon from './SocialIcon';
 import star from '../assets/images/star.png';
 import logo_large from '../assets/images/logo_large.png';
@@ -21,67 +22,162 @@ const Footer = () => {
     { name: 'Privacy Policy', href: '/privacy-policy' }
   ];
   return (
-    <footer className="bg-[#B0D79F] text-gray-700">
-      <div className="container mx-auto px-1 pt-3 pb-3 md:px-6 md:pt-8 md:pb-8">
-        <div className="grid grid-cols-3 gap-2 md:gap-8 text-center md:text-left">
-          {/* Quick Links */}
-          <div className="px-1">
-            <h4 className="font-bold text-xs md:text-3xl mb-1 md:mb-4 text-green-800 flex items-center justify-start">
-              <img src={star} alt="Star Icon" className="inline-block mr-1 w-4 h-4 md:w-8 md:h-8" />
-              <span className="md:border-b-3 border-b-2 border-[#7B2D26]">Quick L</span>inks
-            </h4>
-            <ul className="space-y-0.5 md:space-y-2 mx-auto ml-2 md:ml-0 md:mx-0">
-              {QuickLinks.map((link, index) => (
-                <li key={index} className="flex items-center  justify-start">
-                  <img src={star} alt="Star Icon" className="inline-block mr-1 w-2 h-2 md:w-4 md:h-4" />
-                  <Link to={link.href} className="hover:text-green-700 text-xs md:text-lg">{link.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          {/* Logo & Socials */}
-          <div className="flex flex-col items-center justify-center px-1">
-            <img src={logo_large} alt="Fruto Foods Logo" className="mb-1 w-12 h-12 md:w-60 md:h-60" />
-            <div className="flex flex-row space-x-0 md:space-x-4">
-              <SocialIcon imgSrc={facebook} alt="Facebook" link="https://facebook.com" w={4} h={4} />
-              <SocialIcon imgSrc={linkedin} alt="LinkedIn" link="https://linkedin.com" w={4} h={4} />
-              <span className="hidden md:block">
-                <SocialIcon imgSrc={whatsapp} alt="WhatsApp" link="https://whatsapp.com" w={7} h={7} sw={4} sh={4} />
-              </span>
-              <SocialIcon imgSrc={instagram} alt="Instagram" link="https://instagram.com" w={4} h={4} />
-            </div>
-          </div>
-          {/* Contacts */}
-          <div className="md:text-left text-center md:ml-12 px-1">
-            <h4 className="font-bold text-xs md:text-3xl mb-1 md:mb-4 text-green-800 flex items-center justify-center md:justify-start">
-              <img src={star} alt="Fruto Foods Logo" className="inline-block mr-1 w-4 h-4 md:w-8 md:h-8 align-middle" />
-              <span className="border-b-4 border-[#7B2D26]">Our Con</span>tacts
-            </h4>
-            <div className="mt-0.5 md:mt-4 md:ml-8 inline-block text-left w-full">
-              <ul className="space-y-1 md:space-y-4 text-xs md:text-lg break-words">
-                <li className="flex items-center justify-center md:justify-start">
-                  <img src={call} alt="Call Icon" className="mr-1 w-4 h-4 md:w-7 md:h-7" />
-                  <span className="truncate">+91 98765 43210</span>
-                </li>
-                <li className="flex items-center justify-center md:justify-start">
-                  <img src={mail} alt="Mail Icon" className="mr-1 w-4 h-4 md:w-7 md:h-7" />
-                  <span className="truncate">info@frutofoods.com</span>
-                </li>
-                
-                <li className="flex md:items-center justify-center md:justify-start">
-                  <img src={location} alt="Location Icon" className="mr-1 w-3 h-3 md:w-5 md:h-5" />
-                  <span className="break-words">#12-13-418/4, Street.no.1, Tarnaka, Hyderabad 5000017, Telangana state, India</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-  <div className="mt-4 md:mt-12 pt-2 border-t-3 border-[#C33E2F] text-center text-[10px] md:text-sm text-gray-800 flex flex-col md:flex-row items-center md:justify-between gap-1 overflow-x-auto">
-          <p>Copyright © 2025 <span className='inline-block text-[#C33E2F] border-b-2 border-[#C33E2F]'><a href="#">Fruto Foods</a></span>. All Rights Reserved.</p>
-          <p>Designed & Developed <span className='inline-block text-[#C33E2F] border-b-2 border-[#C33E2F]'><a href="#">TechFusion Hustlers</a></span></p>
-        </div>
+    <motion.footer 
+      className="bg-[#B0D79F] text-gray-700"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+    
+    
+<div className="container mx-auto px-3 pt-6 pb-6 md:px-10 md:pt-10 md:pb-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center lg:text-left">
+    
+    {/* Quick Links */}
+    <motion.div
+      className="px-2"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: true }}
+    >
+      <h4 className="font-bold text-sm sm:text-lg md:text-2xl mb-2 md:mb-4 text-green-800 flex items-center justify-center lg:justify-start">
+        <motion.img
+          src={star}
+          alt="Star"
+          className="inline-block mr-2 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8"
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 0.5 }}
+        />
+        <span className="border-b-2 md:border-b-4 border-[#7B2D26]">
+          Quick Links
+        </span>
+      </h4>
+      <ul className="space-y-1 md:space-y-3">
+        {QuickLinks.map((link, index) => (
+          <motion.li
+            key={index}
+            className="flex items-center justify-center lg:justify-start"
+            whileHover={{ x: 5 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.img
+              src={star}
+              alt="Star"
+              className="inline-block mr-2 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4"
+              whileHover={{ rotate: 180 }}
+              transition={{ duration: 0.3 }}
+            />
+            <Link
+              to={link.href}
+              className="hover:text-green-700 hover:underline text-xs sm:text-sm md:text-lg transition-all duration-300"
+            >
+              {link.name}
+            </Link>
+          </motion.li>
+        ))}
+      </ul>
+    </motion.div>
+
+    {/* Logo & Socials */}
+    <motion.div
+      className="flex flex-col items-center justify-center px-2"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+      viewport={{ once: true }}
+    >
+      <motion.img
+        src={logo_large}
+        alt="Fruto Foods company logo"
+        className="mb-2 w-16 h-16 sm:w-28 sm:h-28 md:w-44 md:h-44"
+        whileHover={{ scale: 1.05, rotate: 2 }}
+        transition={{ duration: 0.3 }}
+      />
+      <div className="flex flex-row space-x-3 sm:space-x-5 mt-2">
+        <SocialIcon imgSrc={facebook} alt="Facebook" link="https://facebook.com" w={5} h={5} />
+        <SocialIcon imgSrc={linkedin} alt="LinkedIn" link="https://linkedin.com" w={5} h={5} />
+        <SocialIcon imgSrc={whatsapp} alt="WhatsApp" link="https://whatsapp.com" w={6} h={6} />
+        <SocialIcon imgSrc={instagram} alt="Instagram" link="https://instagram.com" w={5} h={5} />
       </div>
-    </footer>
+    </motion.div>
+
+    {/* Contacts */}
+    <motion.div
+      className="text-center lg:text-left px-2"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <h4 className="font-bold text-sm sm:text-lg md:text-2xl mb-2 md:mb-4 text-green-800 flex items-center justify-center lg:justify-start">
+        <motion.img
+          src={star}
+          alt="Star"
+          className="inline-block mr-2 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8"
+          whileHover={{ rotate: 360 }}
+          transition={{ duration: 0.5 }}
+        />
+        <span className="border-b-2 md:border-b-4 border-[#7B2D26]">Our Contacts</span>
+      </h4>
+      <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm md:text-lg">
+        <motion.li
+          className="flex items-center justify-center lg:justify-start"
+          whileHover={{ x: 5 }}
+          transition={{ duration: 0.2 }}
+        >
+          <img src={call} alt="Phone" className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7" />
+          <span>+91 98765 43210</span>
+        </motion.li>
+        <motion.li
+          className="flex items-center justify-center lg:justify-start"
+          whileHover={{ x: 5 }}
+          transition={{ duration: 0.2 }}
+        >
+          <img src={mail} alt="Mail" className="mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-7 md:h-7" />
+          <span>info@frutofoods.com</span>
+        </motion.li>
+        <motion.li
+          className="flex items-center justify-center lg:justify-start"
+          whileHover={{ x: 5 }}
+          transition={{ duration: 0.2 }}
+        >
+          <img src={location} alt="Location" className="mr-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+          <span className="max-w-xs sm:max-w-md break-words">
+            #12-13-418/4, Street.no.1, Tarnaka, Hyderabad 5000017, Telangana, India
+          </span>
+        </motion.li>
+      </ul>
+    </motion.div>
+  </div>
+
+  {/* Bottom Bar */}
+  <motion.div
+    className="mt-6 md:mt-10 pt-3 border-t-2 border-[#C33E2F] text-center text-[10px] sm:text-xs md:text-sm text-gray-800 flex flex-col md:flex-row items-center md:justify-between gap-2"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.8 }}
+    viewport={{ once: true }}
+  >
+    <p>
+      Copyright © 2025{" "}
+      <span className="text-[#C33E2F] border-b border-[#C33E2F]">
+        <a href="#">Fruto Foods</a>
+      </span>
+      . All Rights Reserved.
+    </p>
+    <p>
+      Designed & Developed{" "}
+      <span className="text-[#C33E2F] border-b border-[#C33E2F]">
+        <a href="#">TechFusion Hustlers</a>
+      </span>
+    </p>
+  </motion.div>
+</div>
+
+
+    </motion.footer>
   );
 }
 

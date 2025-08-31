@@ -1,5 +1,7 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
+import ScrollProgress from './components/ScrollProgress';
 import { Routes, Route, useParams, Navigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import LandingPage from './pages/landingPage.jsx';
@@ -16,7 +18,9 @@ import MainContentContainer from './MainContentContainer.jsx';
 
 function App() {
   return (
+    <HelmetProvider>
     <div className="min-h-screen bg-black flex items-center justify-center">
+      <ScrollProgress />
       {/* <div className="w-[98%] h-[99vh] bg-white rounded-3xl shadow-lg overflow-auto no-scrollbar my-3"> */}
       <MainContentContainer>
         <div className='min-h-full'>
@@ -46,6 +50,7 @@ function App() {
         </div>
       </MainContentContainer>
     </div>
+    </HelmetProvider>
   );
 }
 

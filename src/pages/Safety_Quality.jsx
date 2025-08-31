@@ -1,4 +1,6 @@
 import React from 'react'
+import { motion } from 'framer-motion';
+import SEOHead from '../components/SEOHead';
 import commitment_safety from '../assets/images/commitment_safety.png';
 import vista_labs from '../assets/images/vista_labs.png';
 import fssai from '../assets/images/fssai.png';
@@ -8,25 +10,52 @@ import rotary from '../assets/images/rotary.png';
 function Safety_Quality() {
   return (
     <div className="bg-gray-50 text-gray-800 px-6 md:px-20 py-12 space-y-16">
+      <SEOHead 
+        title="Safety & Quality - FSSAI Certified | Fruto Foods"
+        description="Fruto Foods maintains highest safety and quality standards. FSSAI certified, APEDA approved, MSME recognized. Lab-tested natural food powders."
+        keywords="FSSAI certified, food safety, quality assurance, APEDA approved, natural food powders safety"
+      />
       
       {/* Heading Section */}
-      <section className="text-center space-y-4">
+      <motion.section 
+        className="text-center space-y-4"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <h1 className="text-3xl md:text-4xl font-bold text-red-700">⚜️ Safety & Quality</h1>
         <p className="italic text-lg max-w-3xl mx-auto">
           “We are committed to delivering only natural and safe products that meet 
           the highest quality standards. Every batch is lab-tested and government-approved, 
           ensuring purity, nutrition, and trust in every pack.”
         </p>
-      </section>
+      </motion.section>
 
       {/* Commitment to Safety */}
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <img
+      <motion.section 
+        className="grid md:grid-cols-2 gap-8 items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.img
           src={commitment_safety}
-          alt="Commitment to Safety"
+          alt="Safety commitment illustration showing quality assurance"
           className="w-48 mx-auto"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          loading="lazy"
         />
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl font-semibold text-red-700">⚜️ Our Commitment to Safety</h2>
           <p className="mt-4">
             Your health and trust mean everything to us, which is why we make safety our 
@@ -36,12 +65,23 @@ function Safety_Quality() {
             Each batch is checked for quality and purity so you and your family can enjoy 
             our products with complete confidence.
           </p>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Quality Assurance */}
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
+      <motion.section 
+        className="grid md:grid-cols-2 gap-8 items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl font-semibold text-red-700">⚜️ Our Quality Assurance</h2>
           <p className="mt-4">
             Quality is at the heart of everything we do. From sourcing the finest natural 
@@ -51,14 +91,45 @@ function Safety_Quality() {
             crafted with consistency and care, so you and your family can enjoy products 
             that are safe, pure, and reliable.
           </p>
-        </div>
-        <img src={vista_labs} alt="Vista Labs" className="w-40 mx-auto" />
-      </section>
+        </motion.div>
+        <motion.img 
+          src={vista_labs} 
+          alt="Vista Labs certification logo" 
+          className="w-40 mx-auto"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          loading="lazy"
+        />
+      </motion.section>
 
       {/* Government Approved */}
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <img src={fssai} alt="FSSAI Certified" className="w-40 mx-auto" />
-        <div>
+      <motion.section 
+        className="grid md:grid-cols-2 gap-8 items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.img 
+          src={fssai} 
+          alt="FSSAI certification logo - Food Safety and Standards Authority of India" 
+          className="w-40 mx-auto"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          loading="lazy"
+        />
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl font-semibold text-red-700">
             ⚜️ Government Approved & FSSAI Certified
           </h2>
@@ -69,26 +140,68 @@ function Safety_Quality() {
             requirements. This certification guarantees that our powders and ingredients 
             are safe, hygienic, and trustworthy for everyday use.
           </p>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* MSME Recognition */}
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
+      <motion.section 
+        className="grid md:grid-cols-2 gap-8 items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl font-semibold text-red-700">⚜️ Recognized by MSME – Govt. of India</h2>
           <p className="mt-4">
             Our products are also recognized by the Ministry of MSME, Government of India. 
             This certification reflects our credibility, ensuring that our powders and 
             ingredients are hygienic, safe, and trustworthy for everyday use.
           </p>
-        </div>
-        <img src={msme} alt="MSME Logo" className="w-40 mx-auto" />
-      </section>
+        </motion.div>
+        <motion.img 
+          src={msme} 
+          alt="MSME Government of India recognition logo" 
+          className="w-40 mx-auto"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          loading="lazy"
+        />
+      </motion.section>
 
       {/* APEDA Standards */}
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <img src={apeda} alt="APEDA" className="w-40 mx-auto" />
-        <div>
+      <motion.section 
+        className="grid md:grid-cols-2 gap-8 items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.img 
+          src={apeda} 
+          alt="APEDA certification logo - Agricultural and Processed Food Products Export Development Authority" 
+          className="w-40 mx-auto"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          loading="lazy"
+        />
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl font-semibold text-red-700">⚜️ APEDA Approved Standards</h2>
           <p className="mt-4">
             Fruto Foods is registered with APEDA (Agriculture and Processed Food Products 
@@ -97,12 +210,23 @@ function Safety_Quality() {
             markets. With APEDA approval, we are committed to safe sourcing, careful processing, 
             and delivering naturally healthy products you can trust.
           </p>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Rotary Association */}
-      <section className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
+      <motion.section 
+        className="grid md:grid-cols-2 gap-8 items-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-2xl font-semibold text-red-700">
             ⚜️ Associated with Rotary International
           </h2>
@@ -113,9 +237,19 @@ function Safety_Quality() {
             positively to society. Through Rotary's values, we ensure honesty, fairness, and 
             responsibility in every step of our business.
           </p>
-        </div>
-        <img src={rotary} alt="Rotary International" className="w-40 mx-auto" />
-      </section>
+        </motion.div>
+        <motion.img 
+          src={rotary} 
+          alt="Rotary International association logo" 
+          className="w-40 mx-auto"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.1 }}
+          loading="lazy"
+        />
+      </motion.section>
     </div>
   )
 }

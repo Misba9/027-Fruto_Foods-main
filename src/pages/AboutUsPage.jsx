@@ -1,16 +1,34 @@
 import React from "react";
+import { motion } from 'framer-motion';
+import SEOHead from '../components/SEOHead';
 import logo from "../assets/images/logo_large.png";
 import leafImg from "../assets/images/leaf.png";
 
 function AboutUsPage() {
   return (
     <div className="bg-white text-gray-800 font-sans">
+      <SEOHead 
+        title="About Us - Fruto Foods | Natural Food Ingredients Manufacturer"
+        description="Learn about Fruto Foods - India's trusted manufacturer of natural food powders and ingredients. 30+ years experience, FSSAI certified, APEDA approved."
+        keywords="about fruto foods, natural food manufacturer, FSSAI certified, APEDA approved, food ingredients supplier"
+      />
+      
       {/* Header */}
-<header className="py-12 border-b border-gray-200 bg-white">
+      <motion.header 
+        className="py-12 border-b border-gray-200 bg-white"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
   <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center px-6">
     
     {/* Left Side Text */}
-    <div className="text-left flex flex-col justify-center">
+    <motion.div 
+      className="text-left flex flex-col justify-center"
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
       <h1 className="text-4xl font-bold text-green-800">Fruto Foods</h1>
       <p className="italic text-gray-600 mt-2">
         ~ Nature’s Goodness in Every Spoon
@@ -21,39 +39,67 @@ function AboutUsPage() {
         after-sales service to achieve the highest level of customer satisfaction
         worldwide.”
       </blockquote>
-    </div>
+    </motion.div>
 
     {/* Right Side Logo */}
-    <div className="flex justify-center md:justify-end">
-      <img
+    <motion.div 
+      className="flex justify-center md:justify-end"
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.4 }}
+    >
+      <motion.img
         src={logo}
-        alt="Fruto Foods Logo"
+        alt="Fruto Foods company logo"
         className="w-40 md:w-56"
+        whileHover={{ scale: 1.05, rotate: 2 }}
+        transition={{ duration: 0.3 }}
       />
-    </div>
+    </motion.div>
 
   </div>
-</header>
+      </motion.header>
 
 
 
 
       {/* About Us Section */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <motion.section 
+        className="max-w-6xl mx-auto px-6 py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-2xl font-bold text-red-700 mb-4">❖ About Us</h2>
 
 <div className="grid md:grid-cols-2 gap-10 items-center">
   {/* Image - Left Side */}
-  <div className="flex justify-center md:justify-start">
-    <img 
+  <motion.div 
+    className="flex justify-center md:justify-start"
+    initial={{ opacity: 0, x: -50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, delay: 0.2 }}
+    viewport={{ once: true }}
+  >
+    <motion.img 
       src={leafImg} 
-      alt="Leaf Illustration" 
+      alt="Natural leaf illustration representing organic products" 
       className="w-48 md:w-64"
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      transition={{ duration: 0.3 }}
+      loading="lazy"
     />
-  </div>
+  </motion.div>
 
   {/* Text - Right Side */}
-  <div className="text-left">
+  <motion.div 
+    className="text-left"
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8, delay: 0.4 }}
+    viewport={{ once: true }}
+  >
     <p className="mb-4">
       At <span className="font-semibold">Fruto Foods</span>, we believe that nature holds the secret 
       to true health and wellness. Our journey began with a simple vision – to bring natural, safe, 
@@ -72,33 +118,53 @@ function AboutUsPage() {
       and guided by integrity, we strive to be a brand that families can always rely on. With Fruto Foods, 
       you don’t just get food – you get a promise of health, purity, and care.
     </p>
-  </div>
+  </motion.div>
 </div>
 
-      </section>
+      </motion.section>
 
       {/* Mission & Vision Section */}
-      <section className="bg-gray-50 py-12">
+      <motion.section 
+        className="bg-gray-50 py-12"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 px-6">
           {/* Mission */}
-          <div className="border p-6 rounded-2xl shadow-md bg-white">
+          <motion.div 
+            className="border p-6 rounded-2xl shadow-md bg-white"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02, shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+          >
             <h3 className="text-xl font-bold text-red-700 mb-2">❖ Our Mission</h3>
             <p>
               Our Mission is to deliver World-Class Products and Services with excellence in Quality, 
               Packaging, Delivery, and Customer Care – ensuring the utmost Satisfaction of people Worldwide.
             </p>
-          </div>
+          </motion.div>
 
           {/* Vision */}
-          <div className="border p-6 rounded-2xl shadow-md bg-white">
+          <motion.div 
+            className="border p-6 rounded-2xl shadow-md bg-white"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.02, shadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)" }}
+          >
             <h3 className="text-xl font-bold text-red-700 mb-2">❖ Our Vision</h3>
             <p>
               To build Trust among people, we EnVision becoming the industry’s leading producer, 
               recognizing for our commitment to delivering high-quality products that truly meet people’s needs.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="text-center py-6 text-sm text-gray-500">
