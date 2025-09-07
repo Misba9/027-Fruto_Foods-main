@@ -22,7 +22,7 @@ function App() {
     <HelmetProvider>
     <div className="min-h-screen  flex items-center justify-center">
       <ScrollProgress />
-      <Analytics/>
+      {/* <Analytics/> */}
       <MainContentContainer>
         <div className='min-h-full'>
           <Header />
