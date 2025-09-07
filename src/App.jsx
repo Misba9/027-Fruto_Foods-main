@@ -13,7 +13,7 @@ import Safety_Quality from './pages/Safety_Quality.jsx';
 import OurTeamPage from './pages/OurTeamPage.jsx';
 import PagesData from './Data/PagesData.js';
 import MainContentContainer from './MainContentContainer.jsx';
- import { Analytics } from "@vercel/analytics/next"
+//  import { Analytics } from "@vercel/analytics/next"
 
 
 function App() {
